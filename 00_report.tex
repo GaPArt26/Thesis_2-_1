@@ -45,10 +45,11 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{soul}
-\usepackage[prefix,intoc]{nomencl}
-\usepackage[nottoc]{tocbibind}
+%\usepackage[prefix,intoc]{nomencl}
+%\usepackage[nottoc]{tocbibind}
 \RequirePackage{ifthen}
 \usepackage{listings}
+%\usepackage{tocloft}
 \usepackage[framed,numbered]{matlab-prettifier}
 
 \lstset{
@@ -61,6 +62,13 @@
 %  \usepackage{epstopdf}
 %\fi
 
+% Subtract 1 from counters that are used
+\renewcommand{\thesection}{\thechapter.\number\numexpr\value{section}-1\relax}
+\renewcommand{\thesubsection}{\thesection.\number\numexpr\value{subsection}-1\relax}
+\renewcommand{\thesubsubsection}{\thesubsection.\number\numexpr\value{subsubsection}-1\relax}
+\setcounter{secnumdepth}{3}
+
+\setcounter{chapter}{0}% Not using chapters, but they're used in the counters
     
 \title{Review chapter}
 \author{Gabriela Pardo Arteaga 4617630}
@@ -69,15 +77,13 @@
 \begin{document}
 \maketitle
 
-\input{sections/abstract.tex}
+\input{sections/0summary.tex}
 \tableofcontents
 %\gobbletocpage
-\addcontentsline{toc}{chapter}{Abstract}
-\input{sections/intro.tex}
+\addcontentsline{toc}{section}{Abstract}
+\newpage
+\input{sections/1introduction.tex}
 \bibliographystyle{unsrt} %ieeetr %alpha %apalike
 \bibliography{sections/thesisref}
-
-
-
 
 \end{document}

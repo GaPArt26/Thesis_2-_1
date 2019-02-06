@@ -1,43 +1,76 @@
-\section{Introduction}
+\chapter{Introduction}
+
 %Introduce the general area of interest that the contents of the review deal with, setting out any advancements and challenges of interest. Then introduce more fully the specific topic addressed in the review and you can then to go on to state any main aim or objectives to be met. Say very briefly what is to come in the layout of the review. Note: the Introduction should include general references to back up the points made.
-In recent years the integration of new technologies on training programs of professional athlete have been increased. Not only to enhance their motor skills, movement science which also could prevent injuries but also to obtain better results with a minimal time and in a more efficient way. The use of information that specify the conditions or parameters that delivers the best results to win have gained more popularity within the sport community. The involvement of science and engineering is not only concentrated in the athletes furthermore in the elements and factors that can not be controlled by them. One of these sports is sailing where athletes have to guide the boat under different weather conditions. \\
-The objective of this section is to present the problem, its relevance and the objective of this research. For this a broe 
-
-
+% Establishing the field
 %Definition:
 %What are the Olympic classes sailing?
 %How are the competitions setting  up?
 %What does position and direction means?
 %What time steps are you referring for the wind forecast, which sizes?
-%Importance:
-%Why the comparison of the time steps is important?
-%Is the start direction significant to minimal time path?
-%What are the conditions of this?
-%Why current softwares cannot be used for this purposes?
-%Method:
-%How the  wind forecast time step size are going to be compare? (Experiments/Simulations)
-%Specifications:
-%What wind model forecast  is going to used? 
-%Which olympic sailing class are going to be used on the test?
-%Where the simulation is going to be taking place?
-%Assumptions:
 
+In recent years the integration of new technologies on training programs of professional athlete have been increased. Not only to enhance their motor skills, and to prevent injuries but also to obtain better results with a minimal time and more efficiently. For example, the use of information that specify the conditions or parameters that delivers the best results to win have gained more popularity within the sport community. The involvement of science like kinesiology \cite{sjogaard2015science}, movement science; and engineering is not only concentrated in the athletes furthermore in the elements and factors that can not be controlled by them but which impact their results. One of these sports is sailing where athletes have to guide the boat under different weather conditions and where time is critical to win the race.\newline
 
+During sailing races such as coastal, inland waterways and lakes athletes are not allow to get any information from coaches for this reason, preparation and training is crucial. For example, a well know competition and classes are the Olympic sailing competitions which take place on coastal and improvements on the boat are not allow. \\
 
-The objective of this section is to present the problem jargon and basic concepts of sailing, sailboats and models of competition for the Olympic Classes. The mechanics of sailing have been know since 1950's, Marchaj in 1979 review it and add information which is still being used for yacht design \cite{marchajaereo1979}. Because  sailboats move through 2  different fluids it is important to know how the elements are named and which words are related with specific manoeuvres.  This simple concepts, will help you to understand how the equilibrium is generated in the static condition, what elements interacts on it and how it is conserved when the sailboat moves from one point to another. 
-Sailing boats are propelled mainly by wind, however they displace through the water; since both fluids are influenced by atmospheric factors, these creates a time-dependent environment to model. The dynamics of the sailboat is determine by its interaction with both fluids, while the control is given by the seamanship through the rudder and sail angles. The seamanship interact with aerodynamic and hydrodynamic forces. These mechanism determine the equilibrium conditions that define how the sailboat moves\cite{fossati2009aero}.  As an example of this, the maximum speed of a sailboat depends on the wind and current velocities and the heading of the sailboat with respect to the wind. The relation of this variables is non linear and it is represented by the Velocity Prediction Polar (VPP).\par
-In sailing, the motions with respect to the wind define the type of manouvres to execute.  Since the sailboat can not displace towards the wind, tacking manoeuvers are perform. These type of paths are described as zig-zag patterns that can be started on the left- or on the right-hand side. Another condition is dictated when the boat is displaced in the same direction as wind. These conditions shows that feasible paths are asymmetrical\cite{dolinskaya2012optimal}. Because athletes are not allow to get any information or feedback from coaches, preparation is crucial. The information of how to course must be deliver before competition and it have to be trained. Another element to consider is the no-go zone where the propulsion is null or not enough to displace the sailboat\cite{yang2011control}.\par
+In this section the research problem, its relevance and the objectives are going to be presented. For this, a brief definition of Olympic sailing classes and common sailing argon are explained followed by the physics behind the boats. It is also provided the description of the competition modes and the characteristics of the information used by the athlete and coach to plan the strategy, these provides a framework to set the assumptions and limitations used in this research.
+\\
 
-\subsection {Sailboat Physics Model} \label{sailphysics}
+\section {Olympic Sailing} \label{sec:olympic classes}
+The Olympic Sailing Classes are characterized by the rule of one-design boat. The intention of this is to leave out the influence of technology on the results and focus on the abilities of the athlete to perform effectively; for this reason, the scope for many researches is on the athlete. The figure \ref{fig:olymp_cla} shows the names and categories of the currently classes that the International Federation of sailing define. The dinghy is the boat with more classes, the differences between them relies on the dimensions of the boat and the sail, which are defined by the number of crew members,1 or 2, and gender. \\
 
-The static and dynamic balance of any type of boat is based on Newton's second law:  in static condition, the equilibrium is reach when the summation of all the forces and momentum equals zero; while in a dynamic situation, as when the boats moves, it is the velocity that leads this equilibrium. Because the sail boat interact between two fluids not only they generate forces but also resistances in one or both mediums. \\ The motion of the boat is described in \cite{fossati2009aero} by 6 fundamental types of motion: 3 rotations and 3 translations, see figure \ref{DOF}. 
+\begin{figure}[ht]
+\centering
+ \includegraphics[width=0.32\textwidth]{olym_classes.png}
+  \caption{Olympic classes \cite{sailoly}.}
+\label{fig:olymp_cla} 
+\end{figure}
 
+The competition on each class stand for many races and days where the configurations of the course varies according the environmental conditions. In each race, points are given according is arrival position, the faster, the lower score. The winner is the one with the lowest score; with this competing format athletes and coaches confront distinct scenarios for which they take different decisions in order to win. One of these decisions refers to the sailing direction taken at the start line. \\
+
+\subsection{Competition Course}\label{tracks}
+The most common form of a sailing competition is the fleet racing where all participants race around a course. Usually two different types of courses took place for the Olympic classes. Figure \ref{fig:trap_c} refers to the trapezoid course which is defined by a separate start and finish line and 4 points around (buoys); these 6 elements define the legs of the competition and the first leg is usually the longest one and it is running against the wind.
+The trapezoid course is the most completed format course, the other formats are a partial representation of it.\\
+%The other course is the windward/leeward, figure \ref{fig:wl_c} this is simply a two-leg race orientated in such way that the first leg is sail against the wind (called a beat) and the second leg is sail with the wind (called a run). If boats are sailing neither with nor against the wind, the leg is called reach. 
+
+\begin{figure}[ht]
+  \centering
+  \subfloat[Trapezoid Course ] {\includegraphics[width=0.53\textwidth]{trap_course.png}\label{fig:trap_c}}
+  \hfill
+  \subfloat[Windward / leeward course] {\includegraphics[width=0.25\textwidth]{l_w.png} \label{fig:wl_c}}
+  \caption{Types of courses \cite{instr_rio}.}
+\label{fig:typecourses} 
+\end{figure}
+
+\cite{race_pol} regulates and define the courses characteristics and conditions to race, these are subject to changes every 4 years. The length and angles of each leg are defined in such way that the course could be completed in maximun 1 hour and the trapezoidal course can be contain in a grid size of 2km by 2 km.  Another consideration is the area of the course,  which most of the time is expressed in nautical miles (nm). Figure \ref{fig:olymp_areas_rio} is an example of how the sailing areas are defined by a circular area, within this circle the trapezoid should be located. Furthermore, the wind conditions refers to the average wind speed in addition to its shift direction.\\
+%The race will not start if the average wind speed is less than 4 knots or more than 25 knots over the entire course. However, the maximum wind shift allowed is 10\deg. 
+If wind conditions are not meet the race could be delay, and if the race has already started it is possible a change on the course or an abandon of the race \cite{race_pol}. It is clear how important is the wind for sailing; however to understand how it interacts with the boat and the athlete it is important to know the physics of sailing. \\
+
+\begin{figure}[ht]
+\centering
+ \includegraphics[width=0.65\textwidth]{16_OG_RaceAreasNOR.jpg}
+  \caption{Sailing Races Areas. Olympic Games Rio 2016 \cite{instr_rio}.}
+\label{fig:olymp_areas_rio} 
+\end{figure}
+
+\section {Sailboat Physics Model} \label{sailphysics}
+%The objective of this section is to present the problem jargon and basic concepts of sailing.
+Sailing boats are propelled mainly by wind, however they displace through the water; in other words, sailboats move through 2 different fluids: water and wind.The mechanics of sailing have been know since 1950's.  Marchaj in 1979 review them and add information which is still being used for yacht design \cite{marchajaereo1979}. Figure \ref{DOF} shows the 6 fundamental types of motion or degrees of freedom (DOF) for boats with the names and axis where they are developed: 3 translations and 3 rotations.  
+The static and dynamic balance of any type of boat is based on Newton's second law. \\
+:  in static condition, the equilibrium is reach when the summation of all the forces and momentum equals zero; while in a dynamic situation, as when the boats moves, it is the velocity that leads this equilibrium.
 \begin{figure}[ht]
 \centering
   \includegraphics[width=0.7\linewidth]{dof_foss_modif.png}
  \caption{Degrees of freedom of a boat, clockwise reference system xyz \cite{fossati2009aero}. }
 \label{DOF}
 \end{figure}
+%Since both fluids are influenced by atmospheric factors, these creates a time-dependent environment to model. 
+Therefore, the dynamics of the sailboat is determine by its interaction with both fluids, while the control is given by the seamanship through the rudder and sail angles. Consequently, the seamanship interact with aerodynamic and hydrodynamic forces which at the same time generate resistances.
+%Because the sail boat interact between two fluids not only they generate forces but also resistances in one or both mediums.
+%it is important to know how the elements are named and which words are related with specific manoeuvres.  This simple concepts, will help you to understand how the equilibrium is generated in the static condition, what elements interacts on it and how it is conserved when the sailboat moves from one point to another. 
+
+\\
+These mechanism determine the equilibrium conditions that define how the sailboat moves\cite{fossati2009aero}.  As an example of this, the maximum speed of a sailboat depends on the wind and current velocities and the heading of the sailboat with respect to the wind. The relation of this variables is non linear and it is represented by the Velocity Prediction Polar (VPP).\par
+
 %As consequence of the forces interaction, the velocity of the boat can be represented in the so called velocity triangle, see figure.
 The steady-state equilibrium of the boat, as a consequence of the forces interaction during motion,  is reach via velocities. The wind, current and boat velocities interaction is represented with the velocity triangle.  As we can see in figure \ref{vel_triangle}, the relation between wind and boat velocities, result in another 2 velocities; the apparent wind velocity  and speed made good,  also know as velocity made good (vector notation). It is important to explain that the velocity of the current is considered in the boat's velocity, equation \ref{eq_vel}; where  is the true wind velocity respect to the boat,  $c_b$ is the current velocity respect to the boat, $\alpha$ is the sail angle and \textit{V} is the velocity vector. According \cite{larsonprinciples}, the velocity made good \textit{(VMG)} provides useful information to understand where is the sailboat on the space is and how is its motion. Therefore, this triangle have to be considered for any type of analysis.
 %% Include equations here 
@@ -114,44 +147,62 @@ To determine the sailboat velocity, between the wind direction and its course, t
 \end{figure}
 
 %The solution of  the VPP predict the sailboat speed for any wind and sailing angle between the wind direction and the course of the boat.
-\subsection {Olympic Classes}
-%\begin{wrapfigure}[]{r}{0.3\textwidth}
-% % \centering 
-% \vspace{-30pt}
-% \centering
-%    \includegraphics[width=0.28\textwidth]{olym_classes.png}
-%  \caption{Olympic Clases \cite{sailoly}.}
-%\label{olym_classes}  
-%\vspace{-10pt}
-%\end{wrapfigure}
-The Olympic Classes of Sailing are characterized by the rule of one-design boat. Since 1924 the tendency  has been in the direction of smaller one-design sailboats with fewer crew members. The intention of this is to leave out the influence of technology on the results and focus on the abilities of the seamanship to perform effectively. Currently, the International Federation of sailing define 8 classes;  one windsurfing board, one multihull and six variants on the dinghy. \\The focus on this research is on laser classes which use a dinghy, a small type of boat, and it contemplates two classes.  %meaning one hull and a centreboard or daggerboard, which is an adjustable fin primarily used to stop the boat and moving sideways through the water
+%\subsection {Olympic Classes}
+
+%The Olympic Classes of Sailing are characterized by the rule of one-design boat. Since 1924 the tendency  has been in the direction of smaller one-design sailboats with fewer crew members. The intention of this is to leave out the influence of technology on the results and focus on the abilities of the seamanship to perform effectively. Currently, the International Federation of sailing define 8 classes;  one windsurfing board, one multihull and six variants on the dinghy. 
+\\The focus on this research is on laser classes which use a dinghy, a small type of boat, and it contemplates two classes.  %meaning one hull and a centreboard or daggerboard, which is an adjustable fin primarily used to stop the boat and moving sideways through the water
 The difference between laser classes refers to the sail area.The laser has a sail area about $7.06 m^2$  and it is competed by men; while the radial has a sail area about  $5.76 m^2$ and it is competed by women.
 
-\begin{figure}[ht]
-  \centering
-  \subfloat[Olympic Clases ] {\includegraphics[width=0.32\textwidth]{olym_classes.png}\label{olymp_c}}
-  \hfill
-  \subfloat[Laser Class] {\includegraphics[width=0.55\textwidth]{laser.jpg} \label{laser_c}}
-  \caption{Olympic classes \cite{sailoly}.}
-\label{laser} 
-\end{figure}
+%\begin{figure}[ht]
+%  \centering
+%{\includegraphics[width=0.32\textwidth]{olym_classes.png}\label{olymp_c}}
+%  \hfill
+%  \subfloat[Laser Class] {\includegraphics[width=0.55\textwidth]{laser.jpg} \label{laser_c}}
+%  \caption{Olympic classes \cite{sailoly}.}
+%\label{laser} 
+%\end{figure}
 
 
-\subsection{Competition Course}\label{tracks}
-The most common form of a sailing competition is the fleet racing where all participants race around a course. Two different types of course are used: trapezoidal and windward return. Usually laser competitions take place on a trapezoid course which is defined by a separate start and finish line and 4 points around (buoys). These 6 elements define the legs of the competition. \\ \cite{race_pol} indicates that a race will not start if the average wind speed is less than 4 knots or more than 25 knots over the entire course  with the exception of the 49er and 49er-Fx classes. Additionally it mention that 10º on wind shift is allow, greater shifts are consider for either change the course or abandon the race, therefore delays could occur until the weather conditions change and allow the competition.  Also in the same document, the length and angles of each leg are  defined, so the course could be completed in aprox. 1 hour  or less and the trapezoidal course can be contain in a grid size of 2km by 2 km.  The area of the course most of the time is expressed in nautical miles (nm) and in circular area using the diameter of the circle as a parameter; however, this area is much bigger than the actual shape of the trapezoid, and the first leg is usually the longest one.   %Regarding with the shape and dimension of the course, the doc it enact that the length of the reaching leg between mark 1 and 2 will be approximately two-thirds of the length of leg 1 and its interior angle should be 70º for boats without spinnakers, which is the case of the laser classes.  
-\\ The windward/leeward course is simply a two-leg affair but orientated so that the first leg is a leeward sail against the wind (called a beat) and the second leg is sail with the wind (called a run). When boats are sailing neither with nor against the wind, the leg is called reach \cite{race_pol}.
 
-\begin{figure}[ht]
-  \centering
-  \subfloat[Trapezoid Course ] {\includegraphics[width=0.53\textwidth]{trap_course.png}\label{trap_c}}
-  \hfill
-  \subfloat[Windward / leeward course] {\includegraphics[width=0.25\textwidth]{l_w.png} \label{wl_c}}
-  \caption{Types of courses \cite{instr_rio}.}
-\label{typecourses} 
-\end{figure}
 
-%starting line must be set up at dead-downwind direction of Buoy 1 no matter using any race route
-%The regatta will consist of an opening series and, provided a minimum of 6 races have been completed in the opening series, a medal rac
+
+Much of the research found refer to yachts competitions. Where the boat design can be modified however this is not the only difference, the shape and dimensions of the course differ significantly. For example, the Volvo Ocean Race is and offshore competitions that stand for months with a total distance between legs of 45,000 nm; due to the format, the wind and other weather conditions can change significantly.  Due to the size of the competition different approaches are borrowed from logistics and nautical sciences in in order to plan the strategy and path to win the race. This is not the case of the Olympic classes. Despite the fact that both type of boats, dinghies and yachts are governed by the sames physics behind 
+
+
+
+
+
+
+
+\\ 
+\\
+The focus on this research is on laser classes which use a dinghy, a small type of boat, and it contemplates two classes.  %meaning one hull and a centreboard or daggerboard, which is an adjustable fin primarily used to stop the boat and moving sideways through the water
+The difference between laser classes refers to the sail area.The laser has a sail area about $7.06 m^2$  and it is competed by men; while the radial has a sail area about  $5.76 m^2$ and it is competed by women.
+
+
+
+
+
+
+
+
+ The information of how to course must be deliver before competition and it have to be trained.
+
+%Importance:
+%Why the comparison of the time steps is important?
+%Is the start direction significant to minimal time path?
+%What are the conditions of this?
+%Why current softwares cannot be used for this purposes?
+%Method:
+%How the  wind forecast time step size are going to be compare? (Experiments/Simulations)
+%Specifications:
+%What wind model forecast  is going to used? 
+%Which olympic sailing class are going to be used on the test?
+%Where the simulation is going to be taking place?
+%Assumptions:
+
+
+
 
 \subsection{The optimal-path problem for Laser Classes}
  %This section is an in depth review of a particular area(s) and/or methods that you will require to complete your project. This could, for example, be particular theories, (mathematical) tools or solutions from other related areas that could be used to solve the problem. Discuss the different solutions/methods, are there disadvantages to using them? Why are they appropriate? What other areas can be used to augment the solutions in order to make them more suitable.
@@ -417,3 +468,6 @@ In \cite{binns2002development} the simulator use a guts wind model  with the nex
 \label{vpp_diagram}
 \end{figure}
 \newpage
+%%
+
+In sailing, the motions with respect to the wind define the type of manouvres to execute.  Since the sailboat can not displace towards the wind, tacking manoeuvers are perform. These type of paths are described as zig-zag patterns that can be started on the left- or on the right-hand side. Another condition is dictated when the boat is displaced in the same direction as wind. These conditions shows that feasible paths are asymmetrical\cite{dolinskaya2012optimal}. Because athletes are not allow to get any information or feedback from coaches, preparation is crucial. The information of how to course must be deliver before competition and it have to be trained. Another element to consider is the no-go zone where the propulsion is null or not enough to displace the sailboat\cite{yang2011control}.\par
