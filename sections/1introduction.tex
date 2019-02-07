@@ -34,8 +34,7 @@ The most common form of a sailing competition is the fleet racing where all part
 The trapezoid course is the most completed format course, the other formats are a partial representation of it, considering only some legs which are already represented in the trapezoid course.\\
 %The other course is the windward/leeward, figure \ref{fig:wl_c} this is simply a two-leg race orientated in such way that the first leg is sail against the wind (called a beat) and the second leg is sail with the wind (called a run). If boats are sailing neither with nor against the wind, the leg is called reach. 
 
-The courses characteristics and conditions to race, these are subject to changes every 4 years also and they are regulated in the next way \cite{race_pol}: The length and angles of each leg are defined in such way that the course could be completed in maximun 1 hour and the trapezoidal course can be contain in a grid size of 2km by 2km.  Another consideration is the area of the course,  which most of the time is expressed in nautical miles (nm). Figure \ref{fig:olymp_areas_rio} is an example of how the sailing areas are defined by a circular area, within this circle the trapezoid should be located. Furthermore, the wind conditions refers to the average wind speed in addition to its shift direction.\\
-%The race will not start if the average wind speed is less than 4 knots or more than 25 knots over the entire course. However, the maximum wind shift allowed is 10\deg. 
+The courses characteristics and conditions to race, these are subject to changes every 4 years also and they are regulated in the next way \cite{race_pol}: The length and angles of each leg are defined in such way that the course could be completed in maximun 1 hour and the trapezoidal course can be contain in a grid size of 2km by 2km.  Another consideration is the area of the course,  which most of the time is expressed in nautical miles (nm). Figure \ref{fig:olymp_areas_rio} is an example of how the sailing areas are defined by a circular area, within this circle the trapezoid should be located. Furthermore, the wind conditions refers to the average wind speed in addition to its shift direction.The race will not start if the average wind speed is less than 4 knots(kn)[2 m/s] or more than 25 knots(12.86 m/s) over the entire course. %However, the maximum wind shift allowed is 10\deg. 
 If wind conditions are not meet the race could be delay, and if the race has already started it is possible a change on the course or an abandon of the race \cite{race_pol}. It is clear how important is the wind for sailing; however to understand how it interacts with the boat and the athlete it is important to know the physics of sailing. \\
 
 \begin{figure}[ht]
@@ -62,7 +61,7 @@ Even when the trajectory looks symmetrical it is important to remember that the 
   \subfloat[Tacking Maneuver \cite{denny2009float}.] {\includegraphics[width=0.45\textwidth]{tacking.png}\label{fig:tacking}}
   \hfill
    \centering
-  \subfloat[ ]{\includegraphics[width=0.35\textwidth]{sym_traj.png}\label{tack_jib}}
+  \subfloat[ ]{\includegraphics[width=0.35\textwidth]{symetry_traj.png}\label{tack_jib}}
   \caption{Tacking maneuver against the wind.}
 \label{fig:tack_against_wind} 
 \end{figure}
@@ -99,11 +98,12 @@ Furthermore, it demonstrates the effects of 3 different time steps and spacial r
 %obtained from the assessment was the powered exoskeleton with monitoring system.
 The algorithm developed is limited to dinghies, the smallest and one of the most used boats on the Olympic classes. More specific, the Laser Class with motion over the XY plane.  The 2D model proposed was validated by comparing the results of the simulations obtained against the results Laser races located at Hyères, France during 2018. The three wind conditions tested are: first, a constant wind intensity and direction along the area of the route; the second, considers a forecast wind field as time-space-dependent variable changing every 10 minutes over 1 km by 1km grid size without current and neglecting the wave disturbances and twisting effects on the sail, the last test condition uses the wind measurements took at 20 Hz during the competition. 
 \\
-Olympic Classes like dinghy is not a widespread research topic. Besides most of the findings related to path optimization for boats are related with cargo ships and vessels, where the main objective is to minimize the fuel costs, because these ship can be set to navigate at a constant speed. The influence of the wind is not the same as for the Olympic Classes. Another consideration that should be taken is related with the movement of the sailor which affect the equilibrium of the boat and therefore the maximum speed that could be reach. In the case of the crew weight, the simulations used the weight proposed by \cite{laser_opt}, which is between	55 and 70 kg.
+
+Olympic Classes like dinghy is not a widespread research topic. Besides most of the findings related to path optimization for boats are related with cargo ships and vessels, where the main objective is to minimize the fuel costs, because these ship can be set to navigate at a constant speed. The influence of the wind is not the same as for the Olympic Classes. The movement of the sailor was not considered as a variable since it was assume that the athlete is skill enough to keep the equilibrium of the boat and  maximize speed without further complications. In the case of the crew weight, the simulations used the weight proposed by \cite{laser_opt}, which is between	55 and 70 kg.
 
  
  \section{Report Structure}
-The report is set as follows: chapter 2 refers to the basics of sailboat; the forces and equation that governs its motion in general and the modifications required for the purposes of this research. The validation of the model and how the wind model is integrated is reviewed chapter 3. In chapter 4, explain the optimizer algorithm and how the model is implemented,  the obtained results are analyzed in chapter 5 and finally the conclusions and recommendations are described in Chapter 6.\\
+The report is set as follows: chapter 2 refers to the basics of sailboat; the forces and equation that governs its motion in general and the modifications required for the purposes of this research. The validation of the model and how the wind model is integrated is reviewed chapter 3. In chapter 4,the optimizer algorithm is explained and how the model is implemented;  the obtained results are analyzed in chapter 5 and finally the conclusions and recommendations are described in chapter 6.\\
 
 \newpage
 %has been considering in the development of methods for the optimal path.
@@ -113,9 +113,9 @@ The report is set as follows: chapter 2 refers to the basics of sailboat; the fo
 
 
 
-Because of this Philpott \cite{philpott2001optimising} describe a method for each condition to figure out the optimal path.  The weather variables in a short courses were considered to have a minimum spatial variation, although they enclose a random component due to its dependence over time.\\
+%Because of this Philpott \cite{philpott2001optimising} describe a method for each condition to figure out the optimal path.  The weather variables in a short courses were considered to have a minimum spatial variation, although they enclose a random component due to its dependence over time.\\
 
 
-With this method the area and time have to being discretize, more over the it consider different states or possibles angles at which the wind will be directed. Which means that each location has to evaluate each of the states and find the optimal path among  \textit{n} stages.  The larger or the smaller the the discretization the more locations to solve according each stage, which seem that the computational effort will grow considerably since each leg has to be evaluated.  The paper does not mention the computational effort nor the difference of time that can be achieve by using it.Philpott \cite{philpott2001optimising}
+%With this method the area and time have to being discretize, more over the it consider different states or possibles angles at which the wind will be directed. Which means that each location has to evaluate each of the states and find the optimal path among  \textit{n} stages.  The larger or the smaller the the discretization the more locations to solve according each stage, which seem that the computational effort will grow considerably since each leg has to be evaluated.  The paper does not mention the computational effort nor the difference of time that can be achieve by using it.Philpott \cite{philpott2001optimising}
 
 

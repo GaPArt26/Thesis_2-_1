@@ -56,15 +56,17 @@ If wind conditions are not meet the race could be delay, and if the race has alr
 
 \section {Sailboat Physics Model} \label{sailphysics}
 %The objective of this section is to present the problem jargon and basic concepts of sailing.
-Sailing boats are propelled mainly by wind, however they displace through the water; in other words, sailboats move through 2 different fluids: water and wind.The mechanics of sailing have been know since 1950's.  Marchaj in 1979 review them and add information which is still being used for yacht design \cite{marchajaereo1979}. Figure \ref{DOF} shows the 6 fundamental types of motion or degrees of freedom (DOF) for boats with the names and axis where they are developed: 3 translations and 3 rotations.  
-The static and dynamic balance of any type of boat is based on Newton's second law. \\
+%Sailing boats are propelled mainly by wind, however they displace through the water; in other words, sailboats move through 2 different fluids: water and wind.The mechanics of sailing have been know since 1950's.  Marchaj in 1979 review them and add information which is still being used for yacht design \cite{marchajaereo1979}. 
+%Figure \ref{DOF} shows the 6 fundamental types of motion or degrees of freedom (DOF) for boats with the names and axis where they are developed: 3 translations and 3 rotations.  
+
+%The static and dynamic balance of any type of boat is based on Newton's second law. \\
 :  in static condition, the equilibrium is reach when the summation of all the forces and momentum equals zero; while in a dynamic situation, as when the boats moves, it is the velocity that leads this equilibrium.
-\begin{figure}[ht]
-\centering
-  \includegraphics[width=0.7\linewidth]{dof_foss_modif.png}
- \caption{Degrees of freedom of a boat, clockwise reference system xyz \cite{fossati2009aero}. }
-\label{DOF}
-\end{figure}
+%\begin{figure}[ht]
+%\centering
+%  \includegraphics[width=0.7\linewidth]{dof_foss_modif.png}
+% \caption{Degrees of freedom of a boat, clockwise reference system xyz %\cite{fossati2009aero}. }
+%\label{DOF}
+%\end{figure}
 %Since both fluids are influenced by atmospheric factors, these creates a time-dependent environment to model. 
 Therefore, the dynamics of the sailboat is determine by its interaction with both fluids, while the control is given by the seamanship through the rudder and sail angles. Consequently, the seamanship interact with aerodynamic and hydrodynamic forces which at the same time generate resistances.
 %Because the sail boat interact between two fluids not only they generate forces but also resistances in one or both mediums.
@@ -116,12 +118,12 @@ Philpott  in \cite{philpott1993yacht} explains how different elements of the boa
 \item Aerodynamic heeling moment=Hydrodynamic (static) righting moment.
 \end{itemize}
 
- \begin{figure}[ht]
-\centering
-  \includegraphics[width=.97\linewidth]{marchaj_forces.png}
- \caption{Equilibrium of forces and moments in steady-state sailing condition \cite{marchajaereo1979}. For details see Appendix \ref{forces_equations} }
-\label{forces_m}
-\end{figure}
+% \begin{figure}[ht]
+%\centering
+%  \includegraphics[width=.97\linewidth]{marchaj_forces.png}
+% \caption{Equilibrium of forces and moments in steady-state sailing condition %\cite{marchajaereo1979}. For details see Appendix \ref{forces_equations} }
+%\label{forces_m}
+%\end{figure}
 
 An important assumption made by  \cite{philpott1993yacht} and \cite{larsonprinciples} to keep the analysis of the boat in 2 dimensions is that vertical forces are in balance always same as the pitching moment. In rough water, however the pitching motion reduces the speed and it is compensated by both mediums, the aerodynamic and hydrodynamic forces. Another consideration refers to the wind, the force it generates over the sails is applied at  the center of effort on them which is assumed to be located at 40\% of the mast height \cite{philpott1993yacht}. \par
 

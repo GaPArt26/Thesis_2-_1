@@ -45,6 +45,7 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{soul}
+\usepackage{breqn}
 %\usepackage[prefix,intoc]{nomencl}
 %\usepackage[nottoc]{tocbibind}
 \RequirePackage{ifthen}
@@ -80,9 +81,10 @@
 %\input{sections/0summary.tex}
 \tableofcontents
 %\gobbletocpage
-\addcontentsline{toc}{section}{Abstract}
+%\addcontentsline{toc}{section}{Abstract}
 \newpage
 \input{sections/1introduction.tex}
+\input{sections/2SailinBoatModel.tex}
 \bibliographystyle{unsrt} %ieeetr %alpha %apalike
 \bibliography{sections/thesisref}
 
